@@ -1,0 +1,44 @@
+Install:
+npx sequelize-cli init
+
+Creaete Model and migrations
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+Execute migrations
+npx sequelize-cli db:migrate --from 20210701021425-add_column_componentsReservation.js --to 20210715161501-add_column_Automatic_closing.js 
+
+Create migrations
+npx sequelize-cli migration:generate --name migration-skeleton
+npx sequelize-cli migration:generate --name add_column_answer_head
+
+Help - Migrations:
+https://sequelize.readthedocs.io/en/latest/docs/migrations/
+
+Create Seed
+npx sequelize-cli seed:generate --name demo-user
+
+Runing Seeds
+npx sequelize-cli db:seed:all
+
+Runing seed specific
+npx sequelize-cli db:seed  --seed xxxxxx
+
+Delete Seeds
+npx sequelize-cli db:seed:undo    --- If you wish to undo most recent seed
+
+npx sequelize-cli db:seed:undo      --- seed name-of-seed-as-in-data --- If you wish to undo a specific seed
+
+npx sequelize-cli db:seed:undo:all         ---  If you wish to undo all seeds
+
+
+Example Mirgations:
+https://sequelize.org/v5/manual/migrations.html
+
+
+Type relations
+Pertenece : hasMany
+Uno a Muchos : belongsTo
+Muchos a Muchos : belongsToMany
+
+
+npx sequelize-cli model:generate --name fileData
